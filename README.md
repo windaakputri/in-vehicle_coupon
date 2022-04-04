@@ -5,18 +5,19 @@
 ### Abstract: This data studies whether a person will accept the coupon recommended to him in different driving scenarios
 
 
-## Source:
+## Source
 
 Tong Wang, tong-wang '@' uiowa.edu, University of Iowa
 
 Cynthia Rudin, cynthia '@' cs.duke.edu, Duke University
 
 
-## Data Set Information:
+## Data Set Information
+
 This data was collected via a survey on Amazon Mechanical Turk. The survey describes different driving scenarios including the destination, current time, weather, passenger, etc., and then ask the person whether he will accept the coupon if he is the driver.
 
 
-## Attribute Information:
+## Attribute Information
 
 destination: No Urgent Place, Home, Work
 
