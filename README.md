@@ -6,6 +6,7 @@
 
 
 ## Source:
+
 Tong Wang, tong-wang '@' uiowa.edu, University of Iowa
 
 Cynthia Rudin, cynthia '@' cs.duke.edu, Duke University
@@ -75,3 +76,27 @@ direction_same:0, 1 (feature meaning: whether the restaurant/bar is in the same 
 direction_opp:1, 0 (feature meaning: whether the restaurant/bar is in the same direction as your current destination)
 
 Y:1, 0 (whether the coupon is accepted)
+
+
+## Data Preparation
+
+Code Used: Python
+
+Packages: Pandas, Numpy, Matplotlib, Seaborn, Sklearn, and Imblearn
+
+
+## Data Cleansing
+
+There are 74 duplicated rows, 99% missing values in 'Car' column, and 1% missing values in 'CoffeeHouse', 'CarryAway', 'RestaurantLessThan20', 'Restaurant20To50' columns. So we will remove duplicate rows, 'Car' column, and fill the missing values in 'CoffeeHouse', 'CarryAway', 'RestaurantLessThan20', 'Restaurant20To50' with Mode value since the column value is categorical.
+
+From the Multicolinearity study, we found that 'direction_opp' and 'direction_same' has correlation value of -1. So we need to choose only one of them. We will proceed with column 'direction_same' and remove 'direction_opp'.
+
+
+## Modeling Data: Random Forest
+
+Random forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble. Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction.
+
+
+## Evaluating Model: Random Forest
+
+Since the distribution of target variable ('Y') are imbalanced, we need to do oversampling minority class. Oversampling will be done with SMOTE technique. After data is balanced, we can use Accuracy as our Metric Evaluation. From sklearn.metric, we can see that our model has accuracy score of 66%.
